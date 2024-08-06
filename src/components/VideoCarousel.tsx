@@ -202,7 +202,7 @@ const VideoCarousel = () => {
                 <div className="flex-center py-5 px-7 bg-gray-300 backdrop-blur rounded-full gap-3">
                     {videoRef.current?.map((_, i) => (
                         <span onClick={isLastVideo ? (() => handleProcess('video-end', i - 1)) : (()=>{})} key={i} ref={(el: HTMLDivElement) => videoDivRef.current[i] = el} className={`size-3 bg-gray-200 relative rounded-full ${isLastVideo && "cursor-pointer"}`} style={{ backgroundColor: isEnd && i === videoId ? '#afafaf' : '' }}>
-                            <span className="absolute size-3 inset-0 rounded-full" ref={(el: HTMLSpanElement) => videoSpanRef.current[i] = el} />
+                            <span className="absolute size-3 min-w-3 inset-0 rounded-full" ref={(el: HTMLSpanElement) => videoSpanRef.current[i] = el} />
                         </span>
                     ))}
                 </div>
